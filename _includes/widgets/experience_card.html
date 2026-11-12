@@ -46,28 +46,10 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        {% if site.data.profile.academic_ambassador or site.data.profile.academic_service %}
-                        <div class="mx-2 mt-3 mb-1 academic-service-block">
+                        {% if site.data.profile.academic_service %}
+                        <div class="mx-2 mt-3 mb-1">
                             <h6>Academic Service</h6>
-                            <div class="academic-service-rows">
-                                {% if site.data.profile.academic_ambassador %}
-                                <div class="academic-service-row">
-                                    <strong>{{ site.data.profile.academic_ambassador.role | escape }}</strong>
-                                    <span class="text-muted">&middot;</span>
-                                    <abbr title="{{ site.data.profile.academic_ambassador.name | escape }}">{{ site.data.profile.academic_ambassador.journal | escape }}</abbr>
-                                    <span class="text-muted service-date">({{ site.data.profile.academic_ambassador.date }})</span>
-                                </div>
-                                {% endif %}
-                                {% if site.data.profile.academic_service %}
-                                <div class="academic-service-row">
-                                    <strong>Journal Reviewer</strong>
-                                    <span class="text-muted">&middot;</span>
-                                    {% for journal in site.data.profile.academic_service %}
-                                    <a href="{{ journal.url }}" target="_blank" rel="noopener noreferrer" title="{{ journal.name | escape }}">{{ journal.abbr }}</a>{% unless forloop.last %}<span class="text-muted">,</span>{% endunless %}
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
-                            </div>
+                            <div class="small">Journal Reviewer: EAAI, JVC, IJPHM, MST, Part O</div>
                         </div>
                         {% endif %}
                     </div>

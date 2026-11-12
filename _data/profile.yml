@@ -59,19 +59,17 @@ education:
 
 
 experience:
+- name: Journal of Reliability Science and Engineering
+  logo: /assets/images/badges/jrse_logo.png
+  position: >-
+    Ambassador &amp; Intern Editor
+  date: 2025 - Present
 - name: Summer Course on Structural Health Monitoring 2026
   logo: /assets/images/badges/shm_logo.png
   position: >-
     Erasmus+ BIP Program, Lisbon, Portugal
   date: Jun. 2026
 
-
-# Academic service: two concise rows on the homepage.
-academic_ambassador:
-  role: Ambassador & Intern Editor
-  journal: JRSE
-  name: Journal of Reliability Science and Engineering
-  date: 2025 - Present
 
 # Completed peer-review service. URLs lead to journal homepages, not reviewer profiles.
 academic_service:
