@@ -46,6 +46,17 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        {% if site.data.profile.academic_service %}
+                        <div class="mx-2 mt-3 mb-1">
+                            <h6>Academic Service</h6>
+                            <div class="small mb-1"><strong>Journal Reviewer</strong></div>
+                            <ul class="small pl-3 mb-1">
+                                {% for journal in site.data.profile.academic_service %}
+                                <li>{{ journal }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endif %}
 

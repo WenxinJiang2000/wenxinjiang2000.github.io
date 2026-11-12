@@ -26,10 +26,10 @@ short_bio: >-
     (Laboratory of Analysis of Systems for the Assessment of Reliability, Risk and Resilience).
   </p>
   <p>
-    My research interests and experience primarily focus on <strong>signal processing</strong> and
-    <strong>Physics AI</strong> for the Prognostics and Health Management of industrial equipment,
-    aiming to develop solutions for practical industrial applications, though there is still a long way to go.
-    I am always happy to connect for academic discussions or research collaborations. Feel free to reach out via email!
+    My research focuses on <strong>signal processing</strong> and <strong>physics-guided machine learning</strong>
+    for Prognostics and Health Management (PHM) of electromechanical systems,
+    with particular interests in rotating machinery and robotic systems.
+    I am happy to connect for academic discussions or research collaborations. Feel free to reach out via email!
   </p>
 
 portrait_url: /assets/images/photos/me.jpg
@@ -70,4 +70,7 @@ experience:
     Erasmus+ BIP Program, Lisbon, Portugal
   date: Jun. 2026
 
-
+# Journals for which peer-review service has been completed.
+academic_service:
+  - "Engineering Applications of Artificial Intelligence (EAAI)"
+  - "Journal of Vibration and Control (JVC)"

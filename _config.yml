@@ -3,7 +3,7 @@ baseurl: ""
 url: "https://wenxinjiang2000.github.io"
 
 title: "Wenxin Jiang"
-description: "Wenxin Jiang is a Ph.D. student at Politecnico di Milano focusing on signal processing, Physics AI, and Prognostics and Health Management."
+description: "Wenxin Jiang is a Ph.D. student at Politecnico di Milano focusing on signal processing, physics-guided machine learning, and Prognostics and Health Management of electromechanical systems."
 
 markdown: kramdown
 future: true
