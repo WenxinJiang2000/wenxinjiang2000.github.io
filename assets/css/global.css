@@ -91,3 +91,202 @@ div.lazy {
 .email-text {
     font-family: Source Code Pro, monospace;
 }
+
+
+/* Site refinements — additive, intentionally preserving the original layout. */
+:root {
+    --homepage-accent: #365e77;
+    --homepage-accent-soft: #edf3f7;
+    --homepage-hairline: #e8edf1;
+}
+
+/* Slightly more deliberate interaction states without changing typography. */
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+    outline: 2px solid #537e9a;
+    outline-offset: 3px;
+}
+.card, .news-panel, .publication-list {
+    border: 1px solid rgba(35, 62, 83, 0.045) !important;
+}
+.card, .news-panel {
+    transition: box-shadow .22s ease;
+}
+.card:hover, .news-panel:hover {
+    box-shadow: 0 .35rem 1.25rem rgba(23, 43, 62, .09) !important;
+}
+
+/* The research summary is concise and editable through _data/profile.yml. */
+.research-topics {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .4rem;
+}
+.research-topics-label {
+    width: 100%;
+    font-size: .77rem;
+    text-transform: uppercase;
+    letter-spacing: .045em;
+    font-weight: 700;
+    color: #697985;
+    margin-bottom: .12rem;
+}
+.research-topic, .journal-tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #dce7ee;
+    border-radius: 999px;
+    padding: .22rem .65rem;
+    background: #f7fafc;
+    font-size: .76rem;
+    line-height: 1.45;
+    color: #466579;
+    white-space: nowrap;
+}
+.journal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .38rem;
+    margin-top: .28rem;
+}
+a.journal-tag {
+    font-weight: 700;
+    transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+a.journal-tag:hover {
+    background: var(--homepage-accent-soft);
+    border-color: #b9d0df;
+    color: #24475d;
+    text-decoration: none;
+}
+.journal-details {
+    color: #687c88;
+}
+.journal-details summary {
+    cursor: pointer;
+    width: max-content;
+    max-width: 100%;
+    color: var(--homepage-accent);
+}
+.journal-details li { margin-bottom: .2rem; }
+
+/* News: calm, readable timeline-like alignment on desktop and mobile. */
+.section-heading i { color: var(--homepage-accent); margin-right: .3rem; }
+.news-year-row {
+    display: grid;
+    grid-template-columns: 4.3rem minmax(0, 1fr);
+    gap: .35rem;
+}
+.news-year-label {
+    font-size: .8rem;
+    font-weight: 700;
+    color: #75848f;
+    padding-top: .5rem;
+}
+.news-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: .75rem;
+    padding: .48rem .35rem .48rem .7rem;
+    border-radius: .4rem;
+    border-left: 2px solid #e3eaf0;
+    margin-bottom: .18rem;
+    transition: background-color .18s ease, border-color .18s ease;
+}
+.news-entry:hover {
+    background: #f7fafc;
+    border-left-color: #9ab8cb;
+}
+.news-title { min-width: 0; line-height: 1.5; }
+.news-external-icon { font-size: .65rem; margin-left: .18rem; opacity: .55; }
+.news-date { color: #7a8791; flex-shrink: 0; font-size: .76rem; font-style: italic; white-space: nowrap; }
+
+/* Publication search/filter — rendered only when JavaScript is available. */
+.publication-tools {
+    background: #fff;
+    border-radius: .8rem;
+    border: 1px solid var(--homepage-hairline);
+    padding: 1rem 1.1rem .8rem;
+    box-shadow: 0 .12rem .5rem rgba(25, 45, 60, .035);
+}
+.publication-tools-header { display: flex; align-items: center; gap: .85rem; }
+.publication-search-box { position: relative; flex: 1; min-width: 0; }
+.publication-search-box i { position: absolute; top: 50%; left: .75rem; transform: translateY(-50%); color: #8a9ba5; font-size: .86rem; }
+.publication-search-box input {
+    width: 100%;
+    background: #f8fafb;
+    color: #273f51;
+    border: 1px solid #e0e8ed;
+    border-radius: .48rem;
+    outline: none;
+    padding: .54rem .75rem .54rem 2.05rem;
+    font-size: .9rem;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.publication-search-box input:focus { border-color: #95b3c6; box-shadow: 0 0 0 .2rem rgba(54, 94, 119, .09); }
+.publication-result-count { font-size: .78rem; color: #788a96; white-space: nowrap; }
+.publication-year-filters { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.publication-year-chip {
+    border: 1px solid #e0e9ee;
+    background: #fff;
+    color: #657b8a;
+    border-radius: 999px;
+    padding: .2rem .74rem;
+    font-size: .78rem;
+    line-height: 1.65;
+    cursor: pointer;
+    transition: background-color .17s ease, border-color .17s ease, color .17s ease;
+}
+.publication-year-chip:hover { border-color: #aabfcc; color: #2a536d; }
+.publication-year-chip.is-active { background: var(--homepage-accent); color: #fff; border-color: var(--homepage-accent); }
+.publication-year-title { color: #293f4f; letter-spacing: -.018em; scroll-margin-top: 6rem; }
+.publication-list { overflow: hidden; }
+.publication-entry { transition: background-color .18s ease; }
+.publication-entry:hover { background: #f8fbfc; }
+.publication-empty-state {
+    border: 1px dashed #c5d5df;
+    border-radius: .8rem;
+    background: #fff;
+    color: #6a7e8b;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+/* Ensure the HTML hidden attribute wins over any Bootstrap display utility. */
+[data-publication-entry][hidden], [data-publication-year-section][hidden],
+[data-publication-year-link][hidden], #publication-no-results[hidden],
+#publication-tools[hidden], #back-to-top[hidden] { display: none !important; }
+
+.back-to-top {
+    position: fixed;
+    right: 1.4rem;
+    bottom: 1.4rem;
+    z-index: 1040;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: 999px;
+    border: 1px solid #c6d9e6;
+    background: rgba(255, 255, 255, .96);
+    color: #37617a;
+    box-shadow: 0 .2rem .9rem rgba(28, 52, 68, .11);
+    cursor: pointer;
+    transition: box-shadow .15s ease, background-color .15s ease;
+}
+.back-to-top:hover { background: #eef5f9; box-shadow: 0 .28rem 1.1rem rgba(28, 52, 68, .18); }
+
+@media (max-width: 575.98px) {
+    .news-year-row { grid-template-columns: 3.3rem minmax(0, 1fr); }
+    .news-entry { flex-wrap: wrap; gap: .22rem; padding: .45rem .35rem .45rem .58rem; }
+    .news-date { width: 100%; }
+    .publication-tools-header { flex-direction: column; align-items: stretch; gap: .5rem; }
+    .publication-result-count { align-self: flex-end; }
+    .back-to-top { width: 2.4rem; height: 2.4rem; right: .85rem; bottom: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .card, .news-panel, .news-entry, .publication-entry, .publication-year-chip,
+    .journal-tag, .back-to-top { transition: none !important; }
+}

@@ -49,12 +49,20 @@
                         {% if site.data.profile.academic_service %}
                         <div class="mx-2 mt-3 mb-1">
                             <h6>Academic Service</h6>
-                            <div class="small mb-1"><strong>Journal Reviewer</strong></div>
-                            <ul class="small pl-3 mb-1">
+                            <div class="small text-muted mb-2">Journal Reviewer</div>
+                            <div class="journal-tags" aria-label="Journals reviewed for">
                                 {% for journal in site.data.profile.academic_service %}
-                                <li>{{ journal }}</li>
+                                <a class="journal-tag" href="{{ journal.url }}" target="_blank" rel="noopener noreferrer" title="{{ journal.name | escape }}" aria-label="{{ journal.name | escape }} (journal homepage)">{{ journal.abbr }}</a>
                                 {% endfor %}
-                            </ul>
+                            </div>
+                            <details class="journal-details small mt-2">
+                                <summary>Full journal names</summary>
+                                <ul class="pl-3 mb-0 mt-2">
+                                    {% for journal in site.data.profile.academic_service %}
+                                    <li>{{ journal.name }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </details>
                         </div>
                         {% endif %}
                     </div>

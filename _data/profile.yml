@@ -5,7 +5,7 @@ navbar_name: "Wenxin Jiang"
 positions:
 - name: Ph.D. Student
 - name: Politecnico di Milano
-  logo: /assets/images/badges/MIT_Social_circle.png  
+  logo: /assets/images/badges/polimi_logo.png  
 
 email: "wenxin.jiang@polimi.it"
 # cv_link: link-to-your-cv-file
@@ -70,7 +70,34 @@ experience:
     Erasmus+ BIP Program, Lisbon, Portugal
   date: Jun. 2026
 
-# Journals for which peer-review service has been completed.
+# Research focus keywords shown as a compact visual summary on the homepage.
+research_interests:
+  - Signal Processing
+  - Physics-Guided Learning
+  - Rotating Machinery
+  - Robotic Systems
+
+# Completed peer-review service. URLs lead to journal homepages, not reviewer profiles.
 academic_service:
-  - "Engineering Applications of Artificial Intelligence (EAAI)"
-  - "Journal of Vibration and Control (JVC)"
+  - abbr: EAAI
+    name: Engineering Applications of Artificial Intelligence
+    url: https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence
+  - abbr: JVC
+    name: Journal of Vibration and Control
+    url: https://journals.sagepub.com/home/jvc
+  - abbr: IJPHM
+    name: International Journal of Prognostics and Health Management
+    url: https://papers.phmsociety.org/index.php/ijphm
+  - abbr: MST
+    name: Measurement Science and Technology
+    url: https://iopscience.iop.org/journal/0957-0233
+  - abbr: Part O
+    name: 'Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability'
+    url: https://journals.sagepub.com/home/pio
+
+# Awards already reported in the site's News collection.
+awards:
+  - name: First Prize, Huawei TechArena Italy 2026
+    date: Nov. 2026
+  - name: Best Presentation Award, ICRE 2026
+    date: Jul. 2026

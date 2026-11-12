@@ -8,25 +8,46 @@ body_attr: >-
 
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="row">
+<div class="row publication-collection">
     <div class="col-12 col-lg-10">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
-            {% endfor %}
+        <div id="publication-tools" class="publication-tools mt-3 mb-2" hidden>
+            <div class="publication-tools-header">
+                <label class="sr-only" for="publication-search">Search publications</label>
+                <div class="publication-search-box">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="publication-search" type="search" placeholder="Search titles, authors, journals..." autocomplete="off">
+                </div>
+                <span id="publication-result-count" class="publication-result-count" aria-live="polite"></span>
+            </div>
+            <div class="publication-year-filters" role="group" aria-label="Filter publications by year">
+                <button type="button" class="publication-year-chip is-active" data-publication-filter="all" aria-pressed="true">All years</button>
+                {% for year in pubs_by_year %}
+                <button type="button" class="publication-year-chip" data-publication-filter="{{ year.name }}" aria-pressed="false">{{ year.name }}</button>
+                {% endfor %}
+            </div>
         </div>
+
+        {% for year in pubs_by_year %}
+        <section class="publication-year-section" data-publication-year-section="{{ year.name }}" aria-labelledby="year-{{ year.name }}">
+            <h2 class="pt-4 publication-year-title" id="year-{{ year.name }}">{{ year.name }}</h2>
+            <div class="my-0 p-0 bg-white shadow-sm rounded-xl publication-list">
+                {% for item in year.items %}
+                <div class="publication-entry" data-publication-entry data-publication-year="{{ year.name }}">
+                    {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
         {% endfor %}
+        <p id="publication-no-results" class="publication-empty-state" hidden>No matching publications. Try another keyword or year.</p>
     </div>
 
     <div class="col-2 d-none d-lg-block">
         <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
             {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+            <a class="nav-link d-block" href="#year-{{ year.name }}" data-publication-year-link="{{ year.name }}">{{ year.name }}</a>
             {% endfor %}
         </div>
     </div>
-
 </div>
+<script defer src="{{ '/assets/js/publications_filter.js' | relative_url }}"></script>
