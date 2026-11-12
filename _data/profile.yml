@@ -59,23 +59,19 @@ education:
 
 
 experience:
-- name: Journal of Reliability Science and Engineering
-  logo: /assets/images/badges/jrse_logo.png
-  position: >-
-    Ambassador &amp; Intern Editor
-  date: 2025 - Present
 - name: Summer Course on Structural Health Monitoring 2026
   logo: /assets/images/badges/shm_logo.png
   position: >-
     Erasmus+ BIP Program, Lisbon, Portugal
   date: Jun. 2026
 
-# Research focus keywords shown as a compact visual summary on the homepage.
-research_interests:
-  - Signal Processing
-  - Physics-Guided Learning
-  - Rotating Machinery
-  - Robotic Systems
+
+# Academic service: two concise rows on the homepage.
+academic_ambassador:
+  role: Ambassador & Intern Editor
+  journal: JRSE
+  name: Journal of Reliability Science and Engineering
+  date: 2025 - Present
 
 # Completed peer-review service. URLs lead to journal homepages, not reviewer profiles.
 academic_service:
@@ -94,10 +90,3 @@ academic_service:
   - abbr: Part O
     name: 'Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability'
     url: https://journals.sagepub.com/home/pio
-
-# Awards already reported in the site's News collection.
-awards:
-  - name: First Prize, Huawei TechArena Italy 2026
-    date: Nov. 2026
-  - name: Best Presentation Award, ICRE 2026
-    date: Jul. 2026
